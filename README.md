@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Javascript_Dyma
 
 Cours Dyma Javascript
@@ -114,3 +115,7 @@ code vite-project/
 ```
 
 ---
+=======
+# Javascript_Exo
+Exercices_Dyma
+>>>>>>> 3f47e26ea60a9fda0909bc126fe3761c2abb51b1
