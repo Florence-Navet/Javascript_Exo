@@ -2,7 +2,7 @@ export let a = 42;
 export let b = 22;
 export let result = a - b;
 
-export let phrase = "Essaye de concatener plusieurs chaines !";
+export let phrase = "Essaye de concaténer plusieurs chaînes !";
 let mots = phrase.split(" ");
 export let c = mots[0] + " " + mots[1];
 export let d = " " + mots[2];
