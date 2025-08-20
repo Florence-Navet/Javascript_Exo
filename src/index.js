@@ -1,8 +1,9 @@
-export function testFn(fichier) {
+// import { testFn } from "./App/deep_copy.js";
+
+export function testFn(objet) {
   // Déclarez en dessous :
-  const coupage = fichier.split(/\.(?=[^\.]+$)/);
-  let reponse = coupage.length > 1 ? coupage[1] : "";
+  const copie = JSON.parse(JSON.stringify(objet));
 
   // Ne touchez pas au return :
-  return reponse;
+  return copie;
 }
