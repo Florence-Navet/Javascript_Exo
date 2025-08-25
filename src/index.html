@@ -1,0 +1,53 @@
+<!-- creer une fonction ajouterApres() entre les balises script q ui va ajouter une option après l'option actuellement selectionnée dans la liste
+ la nouvelle option dooti avoir la bonne valeur, par exemple 3 sii elle est insérée après l'option 2
+ il faut également modifier les options après la nouvelle ajoutée pour qu'elles aient les bonnes valeurs
+  par ex, si l'option 2 est selectionnée, il faut ajoutée une option 3, et modifier 3 ,4 , 5 et 6 
+  
+  
+  OBJECTIFS
+  - cree une fcs ajouterApres()
+  - utiliser la methode add() présent sur l'element liste pour ajouter une option
+    après celle selectionnee avec la bonne valeur (etudier la doc de HTMLSelectElemnt.add())
+  - utiliser une boucle for pour modifier les options après celle ajoutée-->
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercices Dyma</title>
+    <script>
+      function ajouterApres() {
+        const sel = document.getElementById("liste");
+        const index = sel.selectedIndex;
+
+        if (index === -1) return; // aucune sélection
+
+        // Créer la nouvelle option avec la bonne valeur
+        const nouvelleValeur = parseInt(sel.options[index].text) + 1;
+        const nouvelleOption = document.createElement("option");
+        nouvelleOption.text = nouvelleValeur;
+        nouvelleOption.value = nouvelleValeur;
+
+        // Ajouter l'option après celle sélectionnée
+        sel.add(nouvelleOption, sel.options[index + 1]);
+
+        // Mettre à jour les valeurs des options suivantes
+        for (let i = index + 2; i < sel.options.length; i++) {
+          sel.options[i].text = parseInt(sel.options[i].text) + 1;
+          sel.options[i].value = sel.options[i].text;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <select id="liste">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+    <button onclick="ajouterApres()">Ajoute une option après</button>
+  </body>
+</html>

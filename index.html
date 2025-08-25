@@ -1,12 +1,47 @@
+<!-- creer une fonction ajouterApres() entre les balises script q ui va ajouter une option après l'option actuellement selectionnée dans la liste
+ la nouvelle option dooti avoir la bonne valeur, par exemple 3 sii elle est insérée après l'option 2
+ il faut également modifier les options après la nouvelle ajoutée pour qu'elles aient les bonnes valeurs
+  par ex, si l'option 2 est selectionnée, il faut ajoutée une option 3, et modifier 3 ,4 , 5 et 6 
+  
+  
+  OBJECTIFS
+  - cree une fcs ajouterApres()
+  - utiliser la methode add() présent sur l'element liste pour ajouter une option
+    après celle selectionnee avec la bonne valeur (etudier la doc de HTMLSelectElemnt.add())
+  - utiliser une boucle for pour modifier les options après celle ajoutée-->
+
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
-    <title>Test Webpack</title>
-    <script></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercices Dyma</title>
+    <script>
+      function ajouterApres() {
+        const liste = document.getElementById("liste");
+        const index = liste.selectedIndex;
+
+        if (index === -1) return; // rien de sélectionné
+
+        // Créer une nouvelle option avec la bonne valeur
+        const nouvelleValeur = Number(liste.options[index].text) + 1;
+        const nouvelleOption = document.createElement("option");
+        nouvelleOption.text = nouvelleValeur;
+        nouvelleOption.value = nouvelleValeur;
+
+        // Ajouter l'option juste après celle sélectionnée
+        liste.add(nouvelleOption, index + 1);
+      }
+    </script>
   </head>
   <body>
-    <h1>Hello World</h1>
-    <!-- <script src="./dist/main.bundle.js"></script> -->
-    <script type="module" src="./src/index.js"></script>
+    <select id="liste">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+    <button onclick="ajouterApres()">Ajoute une option après</button>
   </body>
 </html>

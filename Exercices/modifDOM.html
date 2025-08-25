@@ -1,0 +1,36 @@
+/** * creer une fct modifierStyle() entre les balises styles script * cette
+foncition doit recuperer sur le DOM le paragraphe et modifier sa couleur * si le
+text est noir, il faut que la fonciton le le mettre en rouge * et s'il est rouge
+qu'elle le mettre en noir * * OBJECTIF * . creer un dossier src et un fichier
+index.html dans celui-ci. Placez-y le code de depart * . creer une fct
+modifierStyle() entre les balises script * . recuperer le paragraphe en
+utilisant son id avec la méthode getElementbyId() * . modifier la couleur du
+paragraphe en changeant sa propriété style.color * . si le paragraphe est noir,
+passez sa couleur en rouge et vice-versa. * */ *********************************
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercices Dyma</title>
+    <script>
+      function modifierStyle() {
+        const p = document.getElementById("texte");
+        if (p.style.color === "black" || p.style.color === "") {
+          p.style.color = "red";
+        } else {
+          p.style.color === "black";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p id="texte">Pratiquons le JavaScript</p>
+    <div>
+      <button id="style" onclick="modifierStyle()">Modifier le style</button>
+    </div>
+
+    <script type="module" src="./src/index.js"></script>
+  </body>
+</html>

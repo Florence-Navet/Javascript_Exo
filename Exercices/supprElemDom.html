@@ -1,0 +1,56 @@
+<!-- Créez une fonction supprimer() pour supprimer du DOM l'option sélectionnée, lors du clic sur le bouton.
+ indice : recherchez sur API des elements HTML selectELEMENT
+ vous pouvez egalement parcourir les options de la liste avec une boucle et comparer leur valeur à la valeur selectionner
+  
+ OBJECTIFS
+ Créez une fonction supprimer() entre les balises script
+Utilisez la méthode getElementById() pour récupérer une référence à la liste
+Utilisez l'API des HTMLSelectElement pour supprimer l'option sélectionnée-->
+
+<!-- Créez une fonction supprimer() pour supprimer du DOM l'option sélectionnée, lors du clic sur le bouton.
+ indice : recherchez sur API des elements HTML selectELEMENT
+ vous pouvez egalement parcourir les options de la liste avec une boucle et comparer leur valeur à la valeur selectionner
+  
+ OBJECTIFS
+ Créez une fonction supprimer() entre les balises script
+Utilisez la méthode getElementById() pour récupérer une référence à la liste
+Utilisez l'API des HTMLSelectElement pour supprimer l'option sélectionnée-->
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercices Dyma</title>
+    <script>
+      function supprimer() {
+        const select = document.getElementById("liste");
+        const index = select.selectedIndex;
+
+        if (index !== -1) {
+          select.remove(index);
+          alert("Option supprimée !");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <select id="liste">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+    <button onclick="supprimer()">Supprimer l'option sélectionnée</button>
+  </body>
+</html>
+
+<!-- correction Dyma      
+
+
+
+function supprimer() {
+        const liste = document.getElementById("liste");
+        liste.remove(liste.selectedIndex);
+      } -->
